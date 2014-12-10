@@ -43,6 +43,7 @@ import org.spongepowered.api.entity.player.gamemode.GameMode;
 import org.spongepowered.api.item.ItemType;
 import org.spongepowered.api.item.inventory.ItemStackBuilder;
 import org.spongepowered.api.item.merchant.TradeOfferBuilder;
+import org.spongepowered.api.potion.PotionEffectBuilder;
 import org.spongepowered.api.potion.PotionEffectType;
 import org.spongepowered.api.world.biome.BiomeType;
 
@@ -115,11 +116,18 @@ public interface GameRegistry {
     ItemStackBuilder getItemBuilder();
 
     /**
-     * Get an trade offer builder.
+     * Get a trade offer builder.
      *
      * @return The trade offer builder
      */
     TradeOfferBuilder getTradeOfferBuilder();
+
+    /**
+     * Get a potion effect builder.
+     *
+     * @return The potion effect builder
+     */
+    PotionEffectBuilder getPotionEffectBuilder();
 
     /**
      * Gets a {@link Particle} by id.
