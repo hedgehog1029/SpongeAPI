@@ -117,5 +117,25 @@ public interface Player extends Human, User, CommandSource, Viewer {
      * Removes the currently displayed {@link Title} from the player's screen.
      */
     void clearTitle();
-
+    
+    /**
+     * Returns if the player is banned or not.
+     * @return Banned state of player.
+     */
+    boolean isBanned();
+    
+    /**
+     * Kicks the player.
+     */
+    void kick();
+    
+    /**
+     * Bans the player.
+     */
+    void ban();
+    
+    /**
+     * Pardons the player.
+     */
+    void pardon();
 }
