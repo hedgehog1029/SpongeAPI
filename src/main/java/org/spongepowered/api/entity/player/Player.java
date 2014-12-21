@@ -119,23 +119,31 @@ public interface Player extends Human, User, CommandSource, Viewer {
     void clearTitle();
     
     /**
-     * Returns if the player is banned or not.
+     * Returns if the player is banned or not (from the vanilla banning system)
+     * 
      * @return Banned state of player.
      */
     boolean isBanned();
     
     /**
-     * Kicks the player.
+     * Kicks the player using the vanilla banning system.
      */
     void kick();
     
     /**
-     * Bans the player.
+     * Bans the player using the vanilla banning system.
+     * 
+     * Triggers {@link PlayerBannedEvent}.
      */
     void ban();
     
     /**
-     * Pardons the player.
+     * Pardons the player using the vanilla banning system.
      */
     void pardon();
+    
+    /**
+     * Returns the Sponge bans manager, for for banning the player.
+     */
+    BanManager getBanManager();
 }
