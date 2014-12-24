@@ -131,11 +131,21 @@ public interface Player extends Human, User, CommandSource, Viewer {
     void kick();
     
     /**
-     * Bans the player using the vanilla banning system.
+     * Bans the player using the vanilla banning system, with default settings.
      * 
      * Triggers {@link PlayerBannedEvent}.
      */
-    void ban();
+    BanInfo ban();
+    
+    /**
+     * Bans the player using the vanilla banning system, with custom settings.
+     * 
+     * @param duration The duration of the ban in seconds, 0 for forever.
+     * @param reason The reason for the ban.
+     * 
+     * @return A new instance of {@link BanInfo}
+     */
+    BanInfo ban(int duration, String reason);
     
     /**
      * Pardons the player using the vanilla banning system.
@@ -143,7 +153,9 @@ public interface Player extends Human, User, CommandSource, Viewer {
     void pardon();
     
     /**
-     * Returns the Sponge bans manager, for for banning the player.
+     * Returns the ban information for the player.
+     * 
+     * @return The player's instance of {@link BanInfo}'
      */
-    BanManager getBanManager();
+     BanInfo getBanInfo();
 }
