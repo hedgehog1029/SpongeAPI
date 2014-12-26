@@ -27,11 +27,8 @@ package org.spongepowered.api.entity.player;
 
 import org.spongepowered.api.effect.Viewer;
 import org.spongepowered.api.entity.living.Human;
-<<<<<<< HEAD
 import org.spongepowered.api.service.bans.BanInfo;
 import org.spongepowered.api.text.message.Message;
-=======
->>>>>>> upstream/master
 import org.spongepowered.api.text.chat.ChatType;
 import org.spongepowered.api.text.message.Message;
 import org.spongepowered.api.text.title.Title;
