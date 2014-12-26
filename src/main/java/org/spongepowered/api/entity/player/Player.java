@@ -27,6 +27,7 @@ package org.spongepowered.api.entity.player;
 
 import org.spongepowered.api.effect.Viewer;
 import org.spongepowered.api.entity.living.Human;
+import org.spongepowered.api.service.bans.BanInfo;
 import org.spongepowered.api.text.message.Message;
 import org.spongepowered.api.text.chat.ChatType;
 import org.spongepowered.api.text.title.Title;
@@ -131,6 +132,13 @@ public interface Player extends Human, User, CommandSource, Viewer {
     void kick();
     
     /**
+     * Kicks the player using the vanilla banning system.
+     * 
+     * @param reason The reason for the kick.
+     */
+    void kick(String reason);
+    
+    /**
      * Bans the player using the vanilla banning system, with default settings.
      * 
      * Triggers {@link PlayerBannedEvent}.
@@ -140,12 +148,14 @@ public interface Player extends Human, User, CommandSource, Viewer {
     /**
      * Bans the player using the vanilla banning system, with custom settings.
      * 
+     * Triggers {@link PlayerBannedEvent}.
+     * 
      * @param duration The duration of the ban in seconds, 0 for forever.
      * @param reason The reason for the ban.
      * 
      * @return A new instance of {@link BanInfo}
      */
-    BanInfo ban(int duration, String reason);
+    BanInfo ban(long duration, String reason);
     
     /**
      * Pardons the player using the vanilla banning system.
@@ -153,9 +163,9 @@ public interface Player extends Human, User, CommandSource, Viewer {
     void pardon();
     
     /**
-     * Returns the ban information for the player.
+     * Returns the BanInfo for the current ban; returns null if player is not banned.
      * 
-     * @return The player's instance of {@link BanInfo}'
+     * @return The player's instance of {@link BanInfo}.
      */
      BanInfo getBanInfo();
 }
